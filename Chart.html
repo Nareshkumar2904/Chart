@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Chart</title>
+</head>
+<body>
+    <div>
+        <canvas id="barChart"></canvas>
+        </div>
+        <div><canvas id="pieChart"></canvas></div>
+        <div><canvas id="lineChart"></canvas></div>
+      
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+      <script>
+        const chart = document.getElementById('barChart');
+      
+        new Chart(chart, {
+          type: 'bar',
+          data: {
+            labels: ['X', 'Y', 'Z'],
+            datasets: [{
+                label:["Values"],
+              data: [100, 120, 50],
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+
+        const tool = document.getElementById("pieChart");
+
+        new Chart(tool, {
+          type: 'pie',
+          data: {
+            labels: ['X', 'Y', 'Z'],
+            datasets: [{
+                label:"Datas",
+              data: [100, 120, 50],
+              borderWidth:2
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+
+        const my = document.getElementById("lineChart");
+
+        new Chart(my, {
+            type: 'line',
+            data: {
+                labels: ['X', 'Y', 'Z'],
+                datasets: [{
+                    label:"Line Values",
+                    data: [100, 120, 50]
+                }]
+            },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+        });
+      </script>
+</body>
+</html>
